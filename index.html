@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Management App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>📝 Quiz Management App</h1>
+
+    <!-- Registration Section -->
+    <div id="register-section">
+        <h2>Create Account</h2>
+
+        <input type="text" id="reg-name" placeholder="Enter Your Name">
+        <input type="email" id="reg-email" placeholder="Enter Your Email">
+        <input type="password" id="reg-password" placeholder="Create Password">
+
+        <button onclick="registerUser()">Register</button>
+
+        <p>
+            Already have an account?
+            <a href="#" onclick="showLogin()">Login Here</a>
+        </p>
+    </div>
+
+    <!-- Login Section -->
+    <div id="login-section" style="display: none;">
+        <h2>Login</h2>
+
+        <input type="email" id="login-email" placeholder="Enter Your Email">
+        <input type="password" id="login-password" placeholder="Enter Password">
+
+        <button onclick="loginUser()">Login</button>
+
+        <p id="login-message"></p>
+
+        <p>
+            Don't have an account?
+            <a href="#" onclick="showRegister()">Register Here</a>
+        </p>
+    </div>
+
+    <!-- Home Section -->
+    <div id="home-section" style="display: none;">
+        <h2>🏠 Home Page</h2>
+
+        <button onclick="startQuiz()">▶️ Start Quiz</button>
+        <button onclick="showCreateQuiz()">➕ Create Quiz</button>
+        <button onclick="showScoreCard()">📊 Score Card</button>
+        <button onclick="logout()">🚪 Logout</button>
+    </div>
+
+    <!-- Quiz Section -->
+    <div id="quiz-section" style="display: none;">
+        <h2 id="question">Question</h2>
+        <div id="answer-buttons"></div>
+
+        <button id="next-btn">Next Question</button>
+        <button onclick="goHome()">🏠 Home</button>
+    </div>
+
+    <!-- Create Quiz Section -->
+    <div id="create-quiz-section" style="display: none;">
+        <h2>Add New Question</h2>
+
+        <input type="text" id="new-question" placeholder="Enter Question">
+        <input type="text" id="option1" placeholder="Option 1">
+        <input type="text" id="option2" placeholder="Option 2">
+        <input type="text" id="option3" placeholder="Option 3">
+        <input type="text" id="option4" placeholder="Option 4">
+        <input type="number" id="correct-option" placeholder="Correct Option (1-4)">
+    
+        <div id="question-list"></div>
+
+        <button onclick="addQuestion()">Add Question</button>
+        <button onclick="goHome()">🏠 Home</button>
+    </div>
+
+    <!-- Score Card Section -->
+    <div id="score-section" style="display: none;">
+        <h2>📊 Score Card</h2>
+        <div id="score-list"></div>
+        <button onclick="goHome()">🏠 Home</button>
+    </div>
+
+    <p id="message"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
